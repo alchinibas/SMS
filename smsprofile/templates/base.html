@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link type="text/css" rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    {% block loadstylesheet %}{% endblock loadstylesheet %}
+</head>
+<body>
+    <header class="row py-lg-5 py-sm-2 mb-3 bg-info text-white align-items-center m-0">
+        <div class="logo-section col-lg-2 col-sm-3 m-auto text-center"><h1>LOGO</h1></div>
+        <div class="title-section col-lg-7 col-sm-9 m-auto text-center">
+            <h1 class="text-blolder text-center">श्री प्रगतिशील उच्च माध्यामीक विध्यालय</h1>
+            <h2 class="text-blolder text-center">हतुवागढी-४, भेाजपुर</h2>
+        </div>
+        <ul class="info-section col-lg-3 col-sm-12 m-auto list-group list-unstyled bg-transparent">
+            <li class="list-group-item border-0 bg-transparent"></li>
+            <li class="list-group-item border-0 bg-transparent text-white">+९७७ ९८२४५७४२३४</li>
+            <li class="list-group-item border-0 bg-transparent text-white">pragitishilhss@edu.np</li>
+        </ul>
+    </header>
+    {% block navbar %}{% endblock navbar %}
+    {% block section %}{% endblock section %}
+    
+    <footer class="bg-info" style="min-height:200px;">
+        {% block footer %}{% endblock footer %}
+    </footer>
+    
+    
+</body>
+{% block loadjavascript %}{% endblock loadjavascript %}
+</html>

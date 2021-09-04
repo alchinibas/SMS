@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Student Register | SMS {% endblock title %}
+   {% block navbar %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+   {% endblock navbar %}
+    {% block section %}
+    <section class="container mt-sm-2 mt-lg-5 mb-3">
+      <form method="POST" >
+        {% csrf_token %}
+        <fieldset>
+          <legend >
+            Student Information
+          </legend>
+          <div class=" row mt-2" >
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">First Name</span>
+                <input type="text" class="form-control" name="SFName" id="SFName">            
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Middle Name</span>
+                <input type="text" class="form-control" name="SMName" id="SMName">          
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Last Name</span>
+                <input type="text" class="form-control" name="SLName" id="SLName">             
+            </div>
+          </div>
+
+          <div class=" row mt-3" >
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Age</span>
+                <input type="text" class="form-control" name="sAge" id="sAge"> 
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Gender</span>
+                <input type="text" class="form-control" name="sGender" id="sGender"> 
+            </div>
+          </div>
+          
+          <div class=" row mt-3" >
+            <div class="col-12 text-center">
+              Contact
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">District</span>
+                <input type="text" class="form-control" name="sDistrict" id="sDistrict">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Municipality</span>
+                <input type="text" class="form-control" name="sMunicipality" id="sMunicipality">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4 ">
+                <span class="small">Tole</span>
+                <input type="text" class="form-control" name="sTole" id="sTole">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-6 mt-1">
+              <span class="small">Email</span>
+              <input type="email" class="form-control" name="sEmail" id="sEmail">
+            </div>
+            <div class=" col-sm-12 col-lg-4 mt-1">
+              <span class="small">Phone/Mobile</span>
+              <input type="text" class="form-control" name="sContact" id="sContact">
+            </div>
+
+          </div>
+        </fieldset>
+        <fieldset class="mt-lg-5 mt-sm-2" id="fatherDetail">
+          <legend>Guardian Information [<span id="relation1">Father</span>]</legend>
+          <div class=" row mt-3" >
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">First Name</span>
+                <input type="text" class="form-control" name="gFName11">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Middle Name</span>
+                <input type="text" class="form-control" name="gMName1">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4 ">
+                <span class="small">Last Name</span>
+                <input type="text" class="form-control" name="gLName1">
+                
+            </div>
+          </div>
+          <div class=" row mt-3" >
+            <div class="col-12 text-center">
+              Contact&nbsp;<input type="checkbox" id="copySon" title="Attach" checked="checked">
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">District</span>
+                <input type="text" class="form-control" name="gDistrict1" id="gDistrict1">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Municipality</span>
+                <input type="text" class="form-control" name="gMunicipality1" id="gMunicipality1">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4 ">
+                <span class="small">Tole</span>
+                <input type="text" class="form-control" name="gTole1" id="gTole1">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-6 mt-1">
+              <span class="small">Email</span>
+              <input type="email" class="form-control" name="gEmail1" id="gEmail1">
+            </div>
+            <div class=" col-sm-12 col-lg-4 mt-1">
+              <span class="small">Phone/Mobile</span>
+              <input type="text" class="form-control" name="gContact1" id="gContact1">
+            </div>
+
+          </div>
+        </fieldset>
+        <fieldset class="mt-lg-5 mt-sm-2" id="motherDetail">
+          <legend>Guardian Information [<span id="relation2">Mother</span>] </legend>
+          <div class=" row mt-3" >
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">First Name</span>
+                <input type="text" class="form-control" name="gFName2">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Middle Name</span>
+                <input type="text" class="form-control" name="gMName2">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4 ">
+                <span class="small">Last Name</span>
+                <input type="text" class="form-control" name="gLName2">
+                
+            </div>
+          </div>
+          <div class=" row mt-3" >
+            <div class="col-12 text-center">
+              Contact&nbsp<input type="checkbox" id="copyFather" title="Attach" checked="checked">
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">District</span>
+                <input type="text" class="form-control" name="gDistrict2" id="gDistrict2">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Municipality</span>
+                <input type="text" class="form-control" name="gMunicipality2" id="gMunicipality2">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4 ">
+                <span class="small">Tole</span>
+                <input type="text" class="form-control" name="gTole2" id="gTole2">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-6 mt-1">
+              <span class="small">Email</span>
+              <input type="email" class="form-control" name="gEmail2" id="gEmail2">
+            </div>
+            <div class=" col-sm-12 col-lg-4 mt-1">
+              <span class="small">Phone/Mobile</span>
+              <input type="text" class="form-control" name="gContact2" id="gContact2">
+            </div>
+
+          </div>
+          
+        </fieldset>
+
+        <div class="col-12">
+          <input type="checkbox" name="noParent" id="noParent">&nbsp;<label for="noParent">Don't have a parent</label>
+        </div>
+
+        <fieldset class="mt-lg-5 mt-sm-2" id="guardianDetail">
+          <legend>Guardian Information [<span><input type="text" placeholder="Relation" id="relation"></span>]</legend>
+          <div class=" row mt-3" >
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">First Name</span>
+                <input type="text" class="form-control" name="gFName">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Middle Name</span>
+                <input type="text" class="form-control" name="gMName">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4 ">
+                <span class="small">Last Name</span>
+                <input type="text" class="form-control" name="gLName">
+                
+            </div>
+          </div>
+          <div class=" row mt-3" >
+            <div class="col-12 text-center">
+              Contact&nbsp;<input type="checkbox" id="copySon" title="Attach" checked="checked">
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">District</span>
+                <input type="text" class="form-control" name="gDistrict" id="gDistrict1">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4">
+                <span class="small">Municipality</span>
+                <input type="text" class="form-control" name="gMunicipality" id="gMunicipality1">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-4 ">
+                <span class="small">Tole</span>
+                <input type="text" class="form-control" name="gTole" id="gTole1">
+                
+            </div>
+            <div class=" col-sm-12 col-lg-6 mt-1">
+              <span class="small">Email</span>
+              <input type="email" class="form-control" name="gEmail" id="gEmail1">
+            </div>
+            <div class=" col-sm-12 col-lg-4 mt-1">
+              <span class="small">Phone/Mobile</span>
+              <input type="text" class="form-control" name="gContact" id="gContact1">
+            </div>
+
+          </div>
+        </fieldset>
+        
+        <div class="mt-4">
+            <input type="submit" class="btn btn-info form-control" value="Register">
+        </div>
+      </form>
+    </section>
+    {% endblock section %}
+
+{% block loadjavascript %}
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'smsprofile/js/main.js' %}" type="text/javascript"></script>
+{% endblock loadjavascript %}
